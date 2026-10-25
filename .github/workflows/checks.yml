@@ -22,7 +22,7 @@ jobs:
       - name: Install MySQL client library
         run: sudo apt-get update && sudo apt-get install -y default-libmysqlclient-dev
       - name: Cache cargo registry and build
-        uses: Swatinem/rust-cache@6323deb102c322ba6fcbdcafc7e3dddab59af2b6 # v2
+        uses: Swatinem/rust-cache@d1527c8f67ef9af357290475d4af4b0fab8f12e0 # v2
       - name: Run tests
         run: cargo test --release --all-features --locked
 
@@ -52,7 +52,7 @@ jobs:
       - name: Install MySQL client library
         run: sudo apt-get update && sudo apt-get install -y default-libmysqlclient-dev
       - name: Cache cargo registry and build
-        uses: Swatinem/rust-cache@6323deb102c322ba6fcbdcafc7e3dddab59af2b6 # v2
+        uses: Swatinem/rust-cache@d1527c8f67ef9af357290475d4af4b0fab8f12e0 # v2
       - name: Run Clippy
         run: cargo clippy --all-targets --all-features --locked -- -D warnings
 
@@ -65,7 +65,7 @@ jobs:
       - name: Install Rust stable
         uses: dtolnay/rust-toolchain@stable
       - name: Cache cargo registry and build
-        uses: Swatinem/rust-cache@6323deb102c322ba6fcbdcafc7e3dddab59af2b6 # v2
+        uses: Swatinem/rust-cache@d1527c8f67ef9af357290475d4af4b0fab8f12e0 # v2
       - name: Run doctests
         run: cargo test --release --doc --locked
       - name: Build documentation
@@ -84,7 +84,7 @@ jobs:
       # rust-version is a contract for consumers of the library, so only the library is
       # checked. The dev-dependencies (criterion, testcontainers) need a newer toolchain.
       - name: Cache cargo registry and build
-        uses: Swatinem/rust-cache@6323deb102c322ba6fcbdcafc7e3dddab59af2b6 # v2
+        uses: Swatinem/rust-cache@d1527c8f67ef9af357290475d4af4b0fab8f12e0 # v2
       - name: Check library (MSRV)
         run: cargo check --lib --locked
 
@@ -99,7 +99,7 @@ jobs:
         with:
           targets: thumbv7em-none-eabihf
       - name: Cache cargo registry and build
-        uses: Swatinem/rust-cache@6323deb102c322ba6fcbdcafc7e3dddab59af2b6 # v2
+        uses: Swatinem/rust-cache@d1527c8f67ef9af357290475d4af4b0fab8f12e0 # v2
       - name: Check library (no_std)
         run: cargo check --lib --target thumbv7em-none-eabihf --locked
 
