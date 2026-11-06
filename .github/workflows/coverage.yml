@@ -23,6 +23,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
       # Nightly because --branch is an unstable llvm-cov option.
       - name: Install Rust nightly with llvm-tools-preview
         uses: dtolnay/rust-toolchain@nightly
