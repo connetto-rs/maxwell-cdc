@@ -72,7 +72,7 @@ jobs:
         if: steps.baseline.outputs.exists == 'true'
         run: cargo semver-checks
 
-  # ClusterFuzzLite does the fuzzing. The fuzz crate is its own workspace, so no other job compiles it.
+  # The fuzz crate is its own workspace, so no other job compiles it.
   fuzz-check:
     name: Fuzz Targets Compile
     runs-on: ubuntu-26.04
